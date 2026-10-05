@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import parkSmartLogo from "../ParkSmartLogo.png";
 
 import {
   BarChart3,
@@ -51,15 +52,16 @@ onUnmounted(() => {
     <header class="site-header">
       <div class="nav-container">
         <a class="brand" href="#">
-          <div class="brand-icon">
-            <ParkingCircle :size="25" />
-          </div>
-
-          <div>
-            <strong>ParkSmart</strong>
-            <span>CSC 375 Project Charter</span>
-          </div>
-        </a>
+        <img
+        :src="parkSmartLogo"
+        alt="ParkSmart logo"
+        class="nav-logo"
+        />
+  <div>
+    <strong>ParkSmart</strong>
+    <span>CSC 375 Project Charter</span>
+  </div>
+</a>
 
         <nav>
           <a
@@ -76,14 +78,19 @@ onUnmounted(() => {
 
     <main>
       <!-- HERO -->
-      <section class="hero">
-        <div class="hero-inner">
-          <div class="uvic-label">
-            <span></span>
-            University of Victoria
-          </div>
+    <section class="hero">
+      <div class="hero-inner">
+        <img
+          :src="parkSmartLogo"
+          alt="ParkSmart"
+          class="hero-logo"
+        />
 
-          <h1>ParkSmart</h1>
+        <div class="uvic-label">
+          <span></span>
+          University of Victoria
+        </div>
+        <h1>ParkSmart</h1>
 
           <h2>
             Automated Parking Capacity Monitoring and Historical Data Analytics
@@ -109,7 +116,6 @@ onUnmounted(() => {
           <div class="project-meta">
             <span>CSC 375</span>
             <span>October 5, 2026</span>
-            <span>Version 1.2</span>
           </div>
         </div>
       </section>
@@ -236,141 +242,57 @@ onUnmounted(() => {
         </div>
       </section>
 
-      <!-- MILESTONES -->
-      <section id="milestones" class="content-section">
-        <div class="section-heading">
-          <span>03</span>
-
-          <div>
-            <p>Schedule</p>
-            <h2>Project Milestones</h2>
-          </div>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-item completed">
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-              <span>October 5, 2026</span>
-              <strong>Project Charter</strong>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-              <span>October 11, 2026</span>
-              <strong>Requirements</strong>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-              <span>October 25, 2026</span>
-              <strong>Use Cases</strong>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-              <span>November 1, 2026</span>
-              <strong>Data Model</strong>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-              <span>November 8, 2026</span>
-              <strong>Process Model</strong>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-              <span>November 15, 2026</span>
-              <strong>UI Prototype</strong>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-              <span>Nov 23 – Dec 3, 2026</span>
-              <strong>Final Report & Presentation</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- TEAM -->
-      <section id="team" class="content-section alt">
-        <div class="section-heading">
-          <span>04</span>
-
-          <div>
-            <p>Project Organization</p>
-            <h2>Meet the Team</h2>
-          </div>
-        </div>
-
-        <div class="team-grid">
+      <div class="team-grid">
           <article>
             <div class="avatar">AT</div>
             <strong>Amanda Tu</strong>
             <span>Project Manager</span>
+            <a class="team-email" href="mailto:atu@uvic.ca">
+              atu@uvic.ca
+            </a>
           </article>
 
           <article>
             <div class="avatar">JK</div>
             <strong>Jonah Kisakye</strong>
             <span>Frontend Developer</span>
+            <a class="team-email" href="mailto:JonahKisakye@uvic.ca">
+              JonahKisakye@uvic.ca
+            </a>
           </article>
 
           <article>
             <div class="avatar">EP</div>
             <strong>Echo Parratt</strong>
             <span>Backend Developer</span>
+            <a class="team-email" href="mailto:eparratt@uvic.ca">
+              eparratt@uvic.ca
+            </a>
           </article>
 
           <article>
             <div class="avatar">JH</div>
             <strong>Jana Hassan</strong>
             <span>UI/UX Designer</span>
+            <a class="team-email" href="mailto:jhassan@uvic.ca">
+              jhassan@uvic.ca
+            </a>
           </article>
 
           <article>
             <div class="avatar">RD</div>
             <strong>Rob Dimmitt</strong>
             <span>Business Analyst</span>
+            <a class="team-email" href="mailto:rdimmitt@uvic.ca">
+              rdimmitt@uvic.ca
+            </a>
           </article>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div>
-        <div class="footer-brand">
-          <ParkingCircle />
-          <strong>ParkSmart</strong>
-        </div>
-
-        <span>
-          CSC 375 · University of Victoria · 2026
-        </span>
       </div>
-    </footer>
-  </div>
+    </main>
+    <div class="footer-brand">
+      </div>
+    </div>
 </template>
 
 <style>
@@ -1019,6 +941,59 @@ footer span {
 }
 
 /* RESPONSIVE */
+/* LOGOS */
+
+.nav-logo {
+  width: 38px;
+  height: 38px;
+  max-width: 38px;
+  object-fit: contain;
+  background: white;
+  border-radius: 8px;
+  padding: 3px;
+}
+
+.hero-logo {
+  width: 90px;
+  height: 90px;
+  max-width: 90px;
+  object-fit: contain;
+  margin: 0 auto 18px;
+  background: white;
+  border-radius: 18px;
+  padding: 6px;
+  box-shadow: 0 8px 24px rgba(0, 39, 84, 0.08);
+}
+
+.footer-logo {
+  width: 30px;
+  height: 30px;
+  max-width: 30px;
+  object-fit: contain;
+  background: white;
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.team-email {
+  display: block;
+  margin-top: 9px;
+  color: var(--blue);
+  font-size: 0.72rem;
+  word-break: break-word;
+}
+
+.team-email:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* RESPONSIVE */
 
 @media (max-width: 850px) {
   nav {
@@ -1055,10 +1030,9 @@ footer span {
 
   footer > div {
     flex-direction: column;
-
     align-items: flex-start;
-
     gap: 10px;
   }
 }
+
 </style>
