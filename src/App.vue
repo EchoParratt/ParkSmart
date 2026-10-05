@@ -2,32 +2,21 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 import {
-  Car,
-  MapPin,
   BarChart3,
   Leaf,
   ShieldCheck,
-  Users,
   CalendarDays,
-  CheckCircle2,
-  XCircle,
-  ChevronDown,
   ParkingCircle,
-  Database,
   MonitorSmartphone,
+  Users,
+  Car,
 } from "lucide-vue-next";
 
 const activeSection = ref("overview");
 
-const scopeOpen = ref({
-  inScope: true,
-  outScope: true,
-});
-
 const sections = [
   "overview",
   "goals",
-  "scope",
   "milestones",
   "team",
 ];
@@ -88,112 +77,39 @@ onUnmounted(() => {
     <main>
       <!-- HERO -->
       <section class="hero">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <div class="uvic-label">
-              <span></span>
-              University of Victoria
-            </div>
-
-            <h1>ParkSmart</h1>
-
-            <h2>
-              Automated Parking Capacity Monitoring and Historical Data
-              Analytics Solution
-            </h2>
-
-            <p>
-              ParkSmart is a proposed parking availability and data analytics
-              solution for the University of Victoria (UVic).
-            </p>
-
-            <div class="hero-actions">
-              <a href="#overview" class="primary-button">
-                Explore Project
-              </a>
-
-              <a href="#milestones" class="secondary-button">
-                <CalendarDays :size="18" />
-                View Timeline
-              </a>
-            </div>
-
-            <div class="project-meta">
-              <span>CSC 375</span>
-              <span>October 5, 2026</span>
-              <span>Version 1.2</span>
-            </div>
+        <div class="hero-inner">
+          <div class="uvic-label">
+            <span></span>
+            University of Victoria
           </div>
 
-          <div class="hero-visual">
-            <div class="parking-panel">
-              <div class="panel-header">
-                <div>
-                  <span>Parking Overview</span>
-                  <strong>UVic Campus</strong>
-                </div>
+          <h1>ParkSmart</h1>
 
-                <div class="live-indicator">
-                  <span></span>
-                  Concept
-                </div>
-              </div>
+          <h2>
+            Automated Parking Capacity Monitoring and Historical Data Analytics
+            Solution
+          </h2>
 
-              <div class="parking-stats">
-                <div class="parking-stat">
-                  <MapPin :size="22" />
-                  <div>
-                    <strong>3</strong>
-                    <span>Lots in Scope</span>
-                  </div>
-                </div>
+          <p>
+            A proposed parking availability and data analytics solution for the
+            University of Victoria.
+          </p>
 
-                <div class="parking-stat">
-                  <BarChart3 :size="22" />
-                  <div>
-                    <strong>Real-time</strong>
-                    <span>Availability</span>
-                  </div>
-                </div>
+          <div class="hero-actions">
+            <a href="#overview" class="primary-button">
+              Explore Project
+            </a>
 
-                <div class="parking-stat">
-                  <Database :size="22" />
-                  <div>
-                    <strong>Historical</strong>
-                    <span>Analytics</span>
-                  </div>
-                </div>
-              </div>
+            <a href="#milestones" class="secondary-button">
+              <CalendarDays :size="18" />
+              View Timeline
+            </a>
+          </div>
 
-              <div class="lot-list">
-                <div class="lot">
-                  <div>
-                    <Car :size="18" />
-                    <span>Parking Lot 1</span>
-                  </div>
-
-                  <span class="status available">In Scope</span>
-                </div>
-
-                <div class="lot">
-                  <div>
-                    <Car :size="18" />
-                    <span>Parking Lot E</span>
-                  </div>
-
-                  <span class="status available">In Scope</span>
-                </div>
-
-                <div class="lot">
-                  <div>
-                    <Car :size="18" />
-                    <span>CARSA Parkade</span>
-                  </div>
-
-                  <span class="status available">In Scope</span>
-                </div>
-              </div>
-            </div>
+          <div class="project-meta">
+            <span>CSC 375</span>
+            <span>October 5, 2026</span>
+            <span>Version 1.2</span>
           </div>
         </div>
       </section>
@@ -210,36 +126,26 @@ onUnmounted(() => {
         </div>
 
         <div class="overview-layout">
-          <div class="main-copy">
+          <div class="overview-text">
             <p>
-              ParkSmart is a proposed parking availability and data analytics
-              solution for the University of Victoria (UVic). The project
-              addresses limitations in UVic’s current parking information
-              system, which mainly provides static information and does not allow
-              drivers to easily view current parking availability before or
-              while travelling through campus.
+              ParkSmart addresses the limitations of UVic’s current static
+              parking information by providing a centralized view of current
+              parking availability and historical parking trends.
             </p>
 
             <p>
-              This can result in drivers spending additional time searching for
-              parking, contributing to traffic congestion, delays, unnecessary
-              vehicle idling, and frustration for campus users.
-            </p>
-
-            <p>
-              The proposed solution will provide a centralized interface that
-              displays current parking availability and historical parking
-              trends, while also supporting administrative analysis of parking
-              usage.
+              The system is intended to reduce time spent searching for parking,
+              decrease congestion and unnecessary vehicle idling, and support
+              better administrative planning.
             </p>
           </div>
 
-          <div class="problem-cards">
+          <div class="overview-points">
             <article>
               <Car />
               <div>
                 <strong>Less Searching</strong>
-                <span>Reduce time spent finding available parking.</span>
+                <span>Help drivers identify suitable parking faster.</span>
               </div>
             </article>
 
@@ -254,8 +160,8 @@ onUnmounted(() => {
             <article>
               <BarChart3 />
               <div>
-                <strong>Better Data</strong>
-                <span>Support long-term parking planning.</span>
+                <strong>Better Planning</strong>
+                <span>Use parking data to support future decisions.</span>
               </div>
             </article>
           </div>
@@ -282,9 +188,9 @@ onUnmounted(() => {
             <h3>System Design & Prototyping</h3>
 
             <p>
-              Develop a working prototype to display our most important
-              features. Things like real-time parking availability, available
-              spaces, and historical parking trends through a simple interface.
+              Develop a working prototype showing real-time parking
+              availability, available spaces, and historical parking trends
+              through a simple interface.
             </p>
           </article>
 
@@ -296,9 +202,9 @@ onUnmounted(() => {
             <h3>Efficiency & Emission Reduction</h3>
 
             <p>
-              The objective for the new system is to reduce the amount of time
-              spent looking for parking by at least 30%, subsequently reducing
-              emissions released by this amount as well.
+              Reduce the amount of time spent looking for parking by at least
+              30%, while also reducing emissions caused by unnecessary vehicle
+              idling.
             </p>
           </article>
 
@@ -311,8 +217,7 @@ onUnmounted(() => {
 
             <p>
               Collect and analyze real-time and historical parking data to
-              identify things like peak hours, most popular lots, as well as
-              common parking usage patterns.
+              identify peak hours, popular lots, and common usage patterns.
             </p>
           </article>
 
@@ -331,115 +236,10 @@ onUnmounted(() => {
         </div>
       </section>
 
-      <!-- SCOPE -->
-      <section id="scope" class="content-section">
+      <!-- MILESTONES -->
+      <section id="milestones" class="content-section">
         <div class="section-heading">
           <span>03</span>
-
-          <div>
-            <p>Project Scope</p>
-            <h2>What's included</h2>
-          </div>
-        </div>
-
-        <p class="section-intro">
-          The ParkSmart project encompasses the analysis, design, prototyping,
-          integration planning, and evaluation of a centralized parking
-          information solution for UVic.
-        </p>
-
-        <div class="scope-grid">
-          <article class="scope-card">
-            <button
-              class="scope-header"
-              @click="scopeOpen.inScope = !scopeOpen.inScope"
-            >
-              <div>
-                <CheckCircle2 class="scope-positive" />
-                <h3>In Scope</h3>
-              </div>
-
-              <ChevronDown
-                :class="{ rotated: scopeOpen.inScope }"
-              />
-            </button>
-
-            <Transition name="expand">
-              <ul v-if="scopeOpen.inScope">
-                <li>
-                  Requirements gathering and analysis for the ParkSmart system.
-                </li>
-
-                <li>
-                  Design and development of a mobile friendly ParkSmart
-                  prototype.
-                </li>
-
-                <li>
-                  User-facing dashboard for Parking Lots 1, E, and the Carsa
-                  Parkade.
-                </li>
-
-                <li>
-                  Administrative portal for monitoring parking availability and
-                  usage patterns.
-                </li>
-
-                <li>
-                  Mobile-responsive user and web-based administrative
-                  interfaces.
-                </li>
-              </ul>
-            </Transition>
-          </article>
-
-          <article class="scope-card">
-            <button
-              class="scope-header"
-              @click="scopeOpen.outScope = !scopeOpen.outScope"
-            >
-              <div>
-                <XCircle class="scope-negative" />
-                <h3>Out of Scope</h3>
-              </div>
-
-              <ChevronDown
-                :class="{ rotated: scopeOpen.outScope }"
-              />
-            </button>
-
-            <Transition name="expand">
-              <ul v-if="scopeOpen.outScope">
-                <li>
-                  Physical deployment of parking-detection hardware.
-                </li>
-
-                <li>
-                  Full production deployment of ParkSmart across UVic.
-                </li>
-
-                <li>
-                  Direct processing of parking payments or other financial
-                  transactions.
-                </li>
-
-                <li>
-                  Enforcing UVic parking regulations.
-                </li>
-
-                <li>
-                  Construction or expansion of physical parking facilities.
-                </li>
-              </ul>
-            </Transition>
-          </article>
-        </div>
-      </section>
-
-      <!-- MILESTONES -->
-      <section id="milestones" class="content-section alt">
-        <div class="section-heading">
-          <span>04</span>
 
           <div>
             <p>Schedule</p>
@@ -449,9 +249,7 @@ onUnmounted(() => {
 
         <div class="timeline">
           <div class="timeline-item completed">
-            <div class="timeline-dot">
-              <CheckCircle2 :size="17" />
-            </div>
+            <div class="timeline-dot"></div>
 
             <div class="timeline-content">
               <span>October 5, 2026</span>
@@ -516,9 +314,9 @@ onUnmounted(() => {
       </section>
 
       <!-- TEAM -->
-      <section id="team" class="content-section">
+      <section id="team" class="content-section alt">
         <div class="section-heading">
-          <span>05</span>
+          <span>04</span>
 
           <div>
             <p>Project Organization</p>
@@ -610,11 +408,6 @@ body {
   margin: 0;
 }
 
-button,
-a {
-  font: inherit;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -624,9 +417,7 @@ a {
 
 .site-header {
   position: sticky;
-
   top: 0;
-
   z-index: 100;
 
   background: rgba(0, 39, 84, 0.97);
@@ -635,36 +426,33 @@ a {
 }
 
 .nav-container {
-  width: min(1120px, 90%);
+  width: min(1100px, 90%);
+  min-height: 72px;
 
   margin: auto;
 
-  min-height: 74px;
-
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .brand {
   display: flex;
-  gap: 12px;
-
   align-items: center;
+  gap: 12px;
 
   color: white;
 }
 
 .brand-icon {
   display: flex;
-
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
 
-  border-radius: 10px;
+  border-radius: 9px;
 
   background: var(--blue);
 }
@@ -688,7 +476,6 @@ a {
 
 nav {
   display: flex;
-
   gap: 8px;
 }
 
@@ -707,7 +494,6 @@ nav a {
 nav a:hover,
 nav a.active {
   background: rgba(255, 255, 255, 0.1);
-
   color: white;
 }
 
@@ -716,35 +502,28 @@ nav a.active {
 .hero {
   background:
     radial-gradient(
-      circle at 85% 20%,
-      rgba(0, 133, 56, 0.09),
+      circle at 80% 20%,
+      rgba(0, 133, 56, 0.07),
       transparent 35%
     ),
-    linear-gradient(180deg, #f8fafc, white);
+    linear-gradient(180deg, #f7f9fb, white);
 
   border-bottom: 1px solid var(--border);
 }
 
-.hero-grid {
-  width: min(1120px, 90%);
-
+.hero-inner {
+  width: min(900px, 90%);
   margin: auto;
 
-  min-height: 580px;
+  padding: 90px 0;
 
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-
-  align-items: center;
-
-  gap: 70px;
-
-  padding: 70px 0;
+  text-align: center;
 }
 
 .uvic-label {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   gap: 8px;
 
@@ -758,61 +537,58 @@ nav a.active {
 }
 
 .uvic-label span {
-  width: 28px;
+  width: 25px;
   height: 3px;
 
   background: var(--yellow);
 }
 
 .hero h1 {
-  margin: 16px 0 0;
+  margin: 15px 0 0;
 
   color: var(--navy);
 
-  font-size: clamp(3.8rem, 7vw, 6.2rem);
+  font-size: clamp(4rem, 8vw, 6rem);
 
   letter-spacing: -0.06em;
-
-  line-height: 0.95;
+  line-height: 1;
 }
 
 .hero h2 {
-  max-width: 680px;
+  max-width: 760px;
 
-  margin: 22px 0 0;
+  margin: 22px auto 0;
 
   color: #31465d;
 
-  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
   font-weight: 500;
 
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
-.hero-copy > p {
-  max-width: 650px;
+.hero > .hero-inner > p {
+  max-width: 620px;
 
-  margin: 22px 0 0;
+  margin: 20px auto 0;
 
   color: var(--muted);
 
-  font-size: 1rem;
-
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
 .hero-actions {
   display: flex;
+  justify-content: center;
 
   gap: 12px;
 
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 .primary-button,
 .secondary-button {
   display: flex;
-
   align-items: center;
 
   gap: 8px;
@@ -831,14 +607,13 @@ nav a.active {
 
 .primary-button {
   background: var(--navy);
-
   color: white;
 }
 
 .secondary-button {
-  border: 1px solid #ccd5dc;
-
   background: white;
+
+  border: 1px solid #ccd5dc;
 
   color: var(--navy);
 }
@@ -852,7 +627,7 @@ nav a.active {
 
 .project-meta {
   display: flex;
-
+  justify-content: center;
   flex-wrap: wrap;
 
   gap: 22px;
@@ -872,181 +647,14 @@ nav a.active {
   color: var(--yellow);
 }
 
-/* PARKING CARD */
-
-.parking-panel {
-  overflow: hidden;
-
-  background: white;
-
-  border: 1px solid #dce3e8;
-
-  border-radius: 16px;
-
-  box-shadow: 0 24px 70px rgba(0, 39, 84, 0.12);
-
-  transition: transform 0.25s;
-}
-
-.parking-panel:hover {
-  transform: translateY(-5px);
-}
-
-.panel-header {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 22px;
-
-  border-bottom: 1px solid var(--border);
-}
-
-.panel-header > div:first-child {
-  display: flex;
-  flex-direction: column;
-
-  gap: 4px;
-}
-
-.panel-header span {
-  color: var(--muted);
-
-  font-size: 0.75rem;
-}
-
-.panel-header strong {
-  color: var(--navy);
-}
-
-.live-indicator {
-  display: flex;
-
-  align-items: center;
-
-  gap: 6px;
-
-  padding: 6px 9px;
-
-  border-radius: 30px;
-
-  background: #edf8f1;
-
-  color: var(--green);
-
-  font-size: 0.7rem;
-  font-weight: 700;
-}
-
-.live-indicator span {
-  width: 7px;
-  height: 7px;
-
-  border-radius: 50%;
-
-  background: var(--green);
-}
-
-.parking-stats {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  border-bottom: 1px solid var(--border);
-}
-
-.parking-stat {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 10px;
-
-  padding: 20px;
-
-  color: var(--blue);
-}
-
-.parking-stat:not(:last-child) {
-  border-right: 1px solid var(--border);
-}
-
-.parking-stat > div {
-  display: flex;
-  flex-direction: column;
-}
-
-.parking-stat strong {
-  color: var(--navy);
-
-  font-size: 0.85rem;
-}
-
-.parking-stat span {
-  margin-top: 3px;
-
-  color: var(--muted);
-
-  font-size: 0.68rem;
-}
-
-.lot-list {
-  padding: 10px;
-}
-
-.lot {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 13px 12px;
-
-  border-radius: 7px;
-
-  transition: background 0.2s;
-}
-
-.lot:hover {
-  background: var(--soft-bg);
-}
-
-.lot > div {
-  display: flex;
-
-  align-items: center;
-
-  gap: 9px;
-
-  color: #354553;
-
-  font-size: 0.85rem;
-}
-
-.status {
-  padding: 5px 8px;
-
-  border-radius: 20px;
-
-  font-size: 0.65rem;
-  font-weight: 700;
-}
-
-.status.available {
-  background: #edf8f1;
-
-  color: var(--green);
-}
-
-/* MAIN */
+/* SECTIONS */
 
 .content-section {
-  width: min(1120px, 90%);
+  width: min(1050px, 90%);
 
   margin: auto;
 
-  padding: 95px 0;
+  padding: 85px 0;
 
   scroll-margin-top: 70px;
 }
@@ -1054,20 +662,19 @@ nav a.active {
 .content-section.alt {
   width: 100%;
 
-  padding-left: max(5%, calc((100% - 1120px) / 2));
-  padding-right: max(5%, calc((100% - 1120px) / 2));
+  padding-left: max(5%, calc((100% - 1050px) / 2));
+  padding-right: max(5%, calc((100% - 1050px) / 2));
 
   background: var(--soft-bg);
 }
 
 .section-heading {
   display: flex;
+  align-items: flex-start;
 
   gap: 14px;
 
-  align-items: flex-start;
-
-  margin-bottom: 36px;
+  margin-bottom: 34px;
 }
 
 .section-heading > span {
@@ -1101,36 +708,33 @@ nav a.active {
   letter-spacing: -0.035em;
 }
 
+/* OVERVIEW */
+
 .overview-layout {
   display: grid;
 
-  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-columns: 1.2fr 0.8fr;
 
   gap: 65px;
 }
 
-.main-copy p,
-.section-intro {
+.overview-text p {
+  margin-top: 0;
+
   color: #596975;
 
   line-height: 1.85;
 }
 
-.main-copy p:first-child {
-  margin-top: 0;
-}
-
-.problem-cards {
+.overview-points {
   display: flex;
-
   flex-direction: column;
 
   gap: 12px;
 }
 
-.problem-cards article {
+.overview-points article {
   display: flex;
-
   align-items: center;
 
   gap: 14px;
@@ -1148,28 +752,28 @@ nav a.active {
     box-shadow 0.2s;
 }
 
-.problem-cards article:hover {
+.overview-points article:hover {
   transform: translateX(4px);
 
   box-shadow: 0 7px 20px rgba(0, 39, 84, 0.07);
 }
 
-.problem-cards svg {
+.overview-points svg {
   color: var(--blue);
 }
 
-.problem-cards div {
+.overview-points div {
   display: flex;
   flex-direction: column;
 }
 
-.problem-cards strong {
+.overview-points strong {
   color: var(--navy);
 
   font-size: 0.88rem;
 }
 
-.problem-cards span {
+.overview-points span {
   margin-top: 3px;
 
   color: var(--muted);
@@ -1190,11 +794,10 @@ nav a.active {
 .goal-card {
   padding: 26px;
 
-  border: 1px solid #dce3e8;
-
-  border-radius: 12px;
-
   background: white;
+
+  border: 1px solid #dce3e8;
+  border-radius: 12px;
 
   transition:
     transform 0.2s,
@@ -1209,7 +812,6 @@ nav a.active {
 
 .icon-box {
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -1243,109 +845,6 @@ nav a.active {
   font-size: 0.88rem;
 }
 
-/* SCOPE */
-
-.section-intro {
-  max-width: 800px;
-
-  margin-bottom: 30px;
-}
-
-.scope-grid {
-  display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 18px;
-}
-
-.scope-card {
-  overflow: hidden;
-
-  border: 1px solid var(--border);
-
-  border-radius: 12px;
-
-  background: white;
-}
-
-.scope-header {
-  width: 100%;
-
-  padding: 20px;
-
-  display: flex;
-
-  justify-content: space-between;
-  align-items: center;
-
-  border: 0;
-
-  background: transparent;
-
-  cursor: pointer;
-}
-
-.scope-header > div {
-  display: flex;
-
-  gap: 10px;
-
-  align-items: center;
-}
-
-.scope-header h3 {
-  margin: 0;
-
-  color: var(--navy);
-}
-
-.scope-positive {
-  color: var(--green);
-}
-
-.scope-negative {
-  color: #a54b42;
-}
-
-.scope-header > svg {
-  color: #79858e;
-
-  transition: transform 0.25s;
-}
-
-.scope-header > svg.rotated {
-  transform: rotate(180deg);
-}
-
-.scope-card ul {
-  margin: 0;
-
-  padding: 0 28px 22px 47px;
-}
-
-.scope-card li {
-  margin-bottom: 12px;
-
-  color: #63717c;
-
-  line-height: 1.55;
-
-  font-size: 0.85rem;
-}
-
-.expand-enter-active,
-.expand-leave-active {
-  transition: all 0.2s ease;
-}
-
-.expand-enter-from,
-.expand-leave-to {
-  opacity: 0;
-
-  transform: translateY(-6px);
-}
-
 /* TIMELINE */
 
 .timeline {
@@ -1361,7 +860,6 @@ nav a.active {
 
   top: 15px;
   bottom: 20px;
-
   left: 15px;
 
   width: 2px;
@@ -1381,21 +879,14 @@ nav a.active {
 
 .timeline-dot {
   position: relative;
-
   z-index: 2;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
 
   flex-shrink: 0;
 
   width: 32px;
   height: 32px;
 
-  border: 4px solid var(--soft-bg);
-
+  border: 8px solid var(--soft-bg);
   border-radius: 50%;
 
   background: #cdd7de;
@@ -1403,13 +894,10 @@ nav a.active {
 
 .timeline-item.completed .timeline-dot {
   background: var(--green);
-
-  color: white;
 }
 
 .timeline-content {
   display: flex;
-
   flex-direction: column;
 
   padding-top: 2px;
@@ -1443,8 +931,9 @@ nav a.active {
 
   text-align: center;
 
-  border: 1px solid var(--border);
+  background: white;
 
+  border: 1px solid var(--border);
   border-radius: 10px;
 
   transition:
@@ -1460,7 +949,6 @@ nav a.active {
 
 .avatar {
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -1508,19 +996,17 @@ footer {
 }
 
 footer > div {
-  width: min(1120px, 100%);
+  width: min(1050px, 100%);
 
   margin: auto;
 
   display: flex;
-
   justify-content: space-between;
   align-items: center;
 }
 
 .footer-brand {
   display: flex;
-
   align-items: center;
 
   gap: 8px;
@@ -1532,26 +1018,15 @@ footer span {
   font-size: 0.76rem;
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 
 @media (max-width: 850px) {
   nav {
     display: none;
   }
 
-  .hero-grid {
-    grid-template-columns: 1fr;
-
-    gap: 45px;
-  }
-
-  .hero-visual {
-    max-width: 550px;
-  }
-
   .overview-layout,
-  .goal-grid,
-  .scope-grid {
+  .goal-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1561,28 +1036,17 @@ footer span {
 }
 
 @media (max-width: 550px) {
+  .hero-inner {
+    padding: 70px 0;
+  }
+
   .hero h1 {
-    font-size: 3.7rem;
+    font-size: 3.8rem;
   }
 
   .hero-actions {
     flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-  .parking-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .parking-stat {
-    flex-direction: row;
-  }
-
-  .parking-stat:not(:last-child) {
-    border-right: 0;
-
-    border-bottom: 1px solid var(--border);
+    align-items: center;
   }
 
   .team-grid {
@@ -1592,9 +1056,9 @@ footer span {
   footer > div {
     flex-direction: column;
 
-    gap: 10px;
-
     align-items: flex-start;
+
+    gap: 10px;
   }
 }
 </style>
