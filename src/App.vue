@@ -18,7 +18,6 @@ const activeSection = ref("overview");
 const sections = [
   "overview",
   "goals",
-  "milestones",
   "team",
 ];
 
@@ -107,10 +106,10 @@ onUnmounted(() => {
               Explore Project
             </a>
 
-            <a href="#milestones" class="secondary-button">
-              <CalendarDays :size="18" />
-              View Timeline
-            </a>
+           <a href="#team" class="secondary-button">
+            <Users :size="18" />
+            Meet the Team
+          </a>
           </div>
 
           <div class="project-meta">
@@ -243,52 +242,65 @@ onUnmounted(() => {
       </section>
 
       <!-- TEAM -->
-      <div class="team-grid">
-          <article>
-            <div class="avatar">AT</div>
-            <strong>Amanda Tu</strong>
-            <span>Project Manager</span>
-            <a class="team-email" href="mailto:atu@uvic.ca">
-              atu@uvic.ca
-            </a>
-          </article>
+      <!-- TEAM -->
+    <section id="team" class="content-section">
+      <div class="section-heading">
+        <span>03</span>
 
-          <article>
-            <div class="avatar">JK</div>
-            <strong>Jonah Kisakye</strong>
-            <span>Frontend Developer</span>
-            <a class="team-email" href="mailto:JonahKisakye@uvic.ca">
-              JonahKisakye@uvic.ca
-            </a>
-          </article>
-
-          <article>
-            <div class="avatar">EP</div>
-            <strong>Echo Parratt</strong>
-            <span>Backend Developer</span>
-            <a class="team-email" href="mailto:eparratt@uvic.ca">
-              eparratt@uvic.ca
-            </a>
-          </article>
-
-          <article>
-            <div class="avatar">JH</div>
-            <strong>Jana Hassan</strong>
-            <span>UI/UX Designer</span>
-            <a class="team-email" href="mailto:jhassan@uvic.ca">
-              jhassan@uvic.ca
-            </a>
-          </article>
-
-          <article>
-            <div class="avatar">RD</div>
-            <strong>Rob Dimmitt</strong>
-            <span>Business Analyst</span>
-            <a class="team-email" href="mailto:rdimmitt@uvic.ca">
-              rdimmitt@uvic.ca
-            </a>
-          </article>
+        <div>
+          <p>Project Organization</p>
+          <h2>Team</h2>
+        </div>
       </div>
+
+      <div class="team-grid">
+        <article>
+          <div class="avatar">AT</div>
+          <strong>Amanda Tu</strong>
+          <span>Project Manager</span>
+          <a class="team-email" href="mailto:atu@uvic.ca">
+            atu@uvic.ca
+          </a>
+        </article>
+
+        <article>
+          <div class="avatar">JK</div>
+          <strong>Jonah Kisakye</strong>
+          <span>Frontend Developer</span>
+          <a class="team-email" href="mailto:JonahKisakye@uvic.ca">
+            JonahKisakye@uvic.ca
+          </a>
+        </article>
+
+        <article>
+          <div class="avatar">EP</div>
+          <strong>Echo Parratt</strong>
+          <span>Backend Developer</span>
+          <a class="team-email" href="mailto:eparratt@uvic.ca">
+            eparratt@uvic.ca
+          </a>
+        </article>
+
+        <article>
+          <div class="avatar">JH</div>
+          <strong>Jana Hassan</strong>
+          <span>UI/UX Designer</span>
+          <a class="team-email" href="mailto:jhassan@uvic.ca">
+            jhassan@uvic.ca
+          </a>
+        </article>
+
+        <article>
+          <div class="avatar">RD</div>
+          <strong>Rob Dimmitt</strong>
+          <span>Business Analyst</span>
+          <a class="team-email" href="mailto:rdimmitt@uvic.ca">
+            rdimmitt@uvic.ca
+          </a>
+        </article>
+      </div>
+    </section>
+
     </main>
     <div class="footer-brand">
       </div>
