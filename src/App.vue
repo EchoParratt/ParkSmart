@@ -114,7 +114,7 @@ onUnmounted(() => {
 
           <div class="project-meta">
             <span>CSC 375</span>
-            <span>October 5, 2026</span>
+            <span>October 7, 2026</span>
           </div>
         </div>
       </section>
